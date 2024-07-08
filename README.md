@@ -65,15 +65,18 @@ If you prefer, you have the option to modify how the MNEMONIC is loaded into the
 
 1. Locate line 21 in the `lib/env.ts` file.
 2. Replace the line that directly assigns the MNEMONIC:
+
    ```typescript
    MNEMONIC: mnemonic,
    ```
    With one that uses an environment variable:
+
     ```typescript
    MNEMONIC: process.env.MNEMONIC,
    ```
 3. Ensure you add the MNEMONIC value to your .env file before making this change.
 4. Comment the line 11 to avoid an error.
+
     ```typescript
     const mnemonic = fs.readFileSync(path.join(os.homedir(), ".config/mp-eth-mnemonic.txt")).toString()
     ```
