@@ -50,6 +50,27 @@ Above this, each network requires a `.env.<network>` file with the following var
 RPC_ENDPOINT="RPC endpoint URL"
 BLOCK_NUMBER="Block number to fork"
 ```
+# Configuración del MNEMONIC para Compilación de Contratos
+
+Para compilar los contratos de manera exitosa, es necesario configurar el MNEMONIC. Este se debe almacenar en un archivo de texto siguiendo la ruta específica: `~/.config/mp-eth-mnemonic.txt`. Esta configuración es crucial para el funcionamiento correcto del archivo de configuración de Hardhat (`hardhat.config.ts`). Sin esta configuración, el comando `npm run compile` resultará en un error.
+
+# MNEMONIC Configuration for Contract Compilation
+
+To successfully compile contracts, it's necessary to configure the MNEMONIC. This should be stored in a text file following the specific path: `~/.config/mp-eth-mnemonic.txt`. This setup is crucial for the correct functioning of the Hardhat configuration file (`hardhat.config.ts`). Without this configuration, running the command `npm run compile` will result in an error.
+
+## Importance of MNEMONIC Security
+
+**Note:** It is a recommended practice to keep the MNEMONIC outside of the project to prevent its exposure. In UNIX/LINUX-based systems, it's common to store sensitive configuration values in a `.config` folder at the server's root or the user's directory. This helps to securely centralize the security configuration.
+
+## Customizing the MNEMONIC Configuration
+
+If you prefer, you have the option to modify how the MNEMONIC is loaded into the project. By default, the MNEMONIC is read from the aforementioned file, but you can change this to read from an environment variable instead. To do this, follow these steps:
+
+1. Locate line 21 in the `lib/env.ts` file.
+2. Replace the line that directly assigns the MNEMONIC:
+   ```typescript
+   MNEMONIC: mnemonic,
+   ```
 
 ## Commands
 Note: 
