@@ -73,6 +73,10 @@ If you prefer, you have the option to modify how the MNEMONIC is loaded into the
    MNEMONIC: process.env.MNEMONIC,
    ```
 3. Ensure you add the MNEMONIC value to your .env file before making this change.
+4. Comment the line 11 to avoid an error.
+    ```typescript
+    const mnemonic = fs.readFileSync(path.join(os.homedir(), ".config/mp-eth-mnemonic.txt")).toString()
+    ```
    
 Alternatively, if you prefer to keep the original method, simply ensure to create the `mp-eth-mnemonic.txt` file in the `.config` folder at the root of your machine.
 
