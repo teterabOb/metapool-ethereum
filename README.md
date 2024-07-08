@@ -50,9 +50,6 @@ Above this, each network requires a `.env.<network>` file with the following var
 RPC_ENDPOINT="RPC endpoint URL"
 BLOCK_NUMBER="Block number to fork"
 ```
-# Configuración del MNEMONIC para Compilación de Contratos
-
-Para compilar los contratos de manera exitosa, es necesario configurar el MNEMONIC. Este se debe almacenar en un archivo de texto siguiendo la ruta específica: `~/.config/mp-eth-mnemonic.txt`. Esta configuración es crucial para el funcionamiento correcto del archivo de configuración de Hardhat (`hardhat.config.ts`). Sin esta configuración, el comando `npm run compile` resultará en un error.
 
 # MNEMONIC Configuration for Contract Compilation
 
