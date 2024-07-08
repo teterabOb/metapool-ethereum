@@ -68,6 +68,13 @@ If you prefer, you have the option to modify how the MNEMONIC is loaded into the
    ```typescript
    MNEMONIC: mnemonic,
    ```
+   With one that uses an environment variable:
+    ```typescript
+   MNEMONIC: process.env.MNEMONIC,
+   ```
+3. Ensure you add the MNEMONIC value to your .env file before making this change.
+   
+Alternatively, if you prefer to keep the original method, simply ensure to create the `mp-eth-mnemonic.txt` file in the `.config` folder at the root of your machine.
 
 ## Commands
 Note: 
@@ -91,3 +98,4 @@ Note:
 `npm run transfer_to_multisig <network>`
 
 This only transfer the admin permission to upgrade the contracts implementations, not the `ADMIN_ROLE`
+
